@@ -1,0 +1,7 @@
+---
+- name: create users
+  hosts: managed
+  become: true
+
+  roles:
+    - webserver
