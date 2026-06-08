@@ -1,0 +1,65 @@
+---
+# tasks file for webserver
+
+- name: Ensure devops group exist
+  group:
+    name: "{{ devops_group }}"
+    state: present
+  tags: groups
+
+- name: Manage all users
+  block:
+
+    - name: Create user accounts
+      user:
+        name: "{{ item.name }}"
+        comment: "{{ item.comment }}"
+        groups: "{{ devops_group }}"
+        append: true
+        password: "{{ lookup('vars', item.name + '_password') | string | password_hash('sha512') }}"
+        state: present
+        shell: /bin/bash
+        create_home: true
+      loop: "{{ users }}"
+      tags: users
+
+    - name: Deploy SSH public keys
+      authorized_key:
+        user: "{{ item.name }}"
+        state: present
+        key: "{{ item.ssh_key }}"
+      loop: "{{ users }}"
+      tags: ssh
+
+    - name: Grant sudo access to sudo users
+      template:
+        src: sudoers.j2
+        dest: "/etc/sudoers.d/{{ item.name }}"
+        owner: root
+        group: root
+        mode: '0440'
+        validate: 'visudo -cf %s'
+      loop: "{{ users }}"
+      when: item.sudo
+      tags: sudo
+
+  rescue:
+    - name: User setup failed
+      debug:
+        msg: "Setup failed! Check /var/log/secure for details."
+
+  always:
+    - name: Verify users exist
+      command: "id {{ item.name }}"
+      register: user_check
+      changed_when: false
+      loop: "{{ users }}"
+      tags: verify
+
+    - name: Show user verification results
+      debug:
+        msg: "{{ item.stdout }}"
+      loop: "{{ user_check.results }}"
+      loop_control:
+        label: "{{ item.item.name }}"
+      tags: verify

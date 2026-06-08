@@ -1,0 +1,18 @@
+---
+# defaults file for webserver
+
+devops_group: devops
+ 
+users:
+  - name: rajesh
+    comment: "Rajesh dev"
+    sudo: true
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuUMzSXHlCd6Mffti7MstckLPB1Rc3lLTcYfC6ivGFkcXEKoDSl2jw5B7x8FZINYMld0ZRY09PifRdCmWaGl+B3w6aPZoZw1CcFClw9AwRXruMq07SFDImCSYEUt8sAwstIo2GjT9MDH6voLI2R+nEA0k+Ui6nIudG9bMO8cTVadYEn50G20xOI6jISp8YhR92llfk1guAHe25oax2kzjkBQjBveLUQzQG7l3XSr4H42wPa9qFGoln/xugDxk9yJiSRKj79rJSzxgFdviSdj6NZvTD+CrwddosR7BLINot4O7bC8Ci83fJ/zFRRtfVzdEXhxQd5DBDnEO+ODi59mOKhP2nc81d0rSYET+fXVpOfwuGATJ0S/uNynrDSa9gLAvMlHYRndfXnfo0DHEsywY2PDK4h1lWiXIpk+9IhieOw3p/CKG16LfZEq2tyNV/ovVkkC7W2MCMl24pMRFDFveiPM5W2TjAOGlzQ4cC2PIefy4zQyStFo5IaFmz0eEE3S0= root@ip-172-31-14-35.us-west-1.compute.internal"
+  - name: kamlesh
+    comment: "kamlesh dev"
+    sudo: true
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuUMzSXHlCd6Mffti7MstckLPB1Rc3lLTcYfC6ivGFkcXEKoDSl2jw5B7x8FZINYMld0ZRY09PifRdCmWaGl+B3w6aPZoZw1CcFClw9AwRXruMq07SFDImCSYEUt8sAwstIo2GjT9MDH6voLI2R+nEA0k+Ui6nIudG9bMO8cTVadYEn50G20xOI6jISp8YhR92llfk1guAHe25oax2kzjkBQjBveLUQzQG7l3XSr4H42wPa9qFGoln/xugDxk9yJiSRKj79rJSzxgFdviSdj6NZvTD+CrwddosR7BLINot4O7bC8Ci83fJ/zFRRtfVzdEXhxQd5DBDnEO+ODi59mOKhP2nc81d0rSYET+fXVpOfwuGATJ0S/uNynrDSa9gLAvMlHYRndfXnfo0DHEsywY2PDK4h1lWiXIpk+9IhieOw3p/CKG16LfZEq2tyNV/ovVkkC7W2MCMl24pMRFDFveiPM5W2TjAOGlzQ4cC2PIefy4zQyStFo5IaFmz0eEE3S0= root@ip-172-31-14-35.us-west-1.compute.internal"
+  - name: yogesh
+    comment: "yogesh dev"
+    sudo: false
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuUMzSXHlCd6Mffti7MstckLPB1Rc3lLTcYfC6ivGFkcXEKoDSl2jw5B7x8FZINYMld0ZRY09PifRdCmWaGl+B3w6aPZoZw1CcFClw9AwRXruMq07SFDImCSYEUt8sAwstIo2GjT9MDH6voLI2R+nEA0k+Ui6nIudG9bMO8cTVadYEn50G20xOI6jISp8YhR92llfk1guAHe25oax2kzjkBQjBveLUQzQG7l3XSr4H42wPa9qFGoln/xugDxk9yJiSRKj79rJSzxgFdviSdj6NZvTD+CrwddosR7BLINot4O7bC8Ci83fJ/zFRRtfVzdEXhxQd5DBDnEO+ODi59mOKhP2nc81d0rSYET+fXVpOfwuGATJ0S/uNynrDSa9gLAvMlHYRndfXnfo0DHEsywY2PDK4h1lWiXIpk+9IhieOw3p/CKG16LfZEq2tyNV/ovVkkC7W2MCMl24pMRFDFveiPM5W2TjAOGlzQ4cC2PIefy4zQyStFo5IaFmz0eEE3S0= root@ip-172-31-14-35.us-west-1.compute.internal" 
